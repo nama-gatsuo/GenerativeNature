@@ -1,0 +1,3 @@
+ofxDeferredShading
+ofxGui
+ofxOsc
