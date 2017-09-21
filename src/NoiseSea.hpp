@@ -34,6 +34,7 @@ public:
     };
     void draw(ofCamera& cam, bool isShadow){
         shader.begin();
+        shader.setUniform1i("isShadow", isShadow?1:0);
         shader.setUniform1f("farClip", cam.getFarClip());
         shader.setUniform1f("nearClip", cam.getNearClip());
         shader.setUniform1f("colFactor", colFactor.get());

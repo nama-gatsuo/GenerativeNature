@@ -9,6 +9,10 @@
 #include "OctaNest.hpp"
 #include "GenTunnel.hpp"
 #include "ConnectedLights.hpp"
+#include "CalatravaStruct.hpp"
+#include "FractalInstancing.hpp"
+#include "RotateArc.hpp"
+#include "TriWall.hpp"
 
 #include "PostEffect.hpp"
 
@@ -81,6 +85,7 @@ private:
     ofParameter<float> sha_dif;
     ofParameter<float> sha_dark;
     ofParameter<float> sha_blend;
+    ofParameter<float> sha_far;
     
     ofParameterGroup dof;
     ofParameter<float> dof_blur;

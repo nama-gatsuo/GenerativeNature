@@ -41,19 +41,19 @@ void PostEffect::end(){
     switch (mode) {
         case 0: break;
         case 1: {
-            complexConv.begin();
-            complexConv.setUniform1f("s1", params[0]);
-            complexConv.setUniform1f("s2", params[1]);
-            break;
-        }
-        case 2: {
             mirrorConv.begin();
             mirrorConv.setUniform1i("mode", 0); // horizontal
             break;
         }
-        case 3: {
+        case 2: {
             mirrorConv.begin();
             mirrorConv.setUniform1i("mode", 1); // vertical
+            break;
+        }
+        case 3: {
+            complexConv.begin();
+            complexConv.setUniform1f("s1", params[0]);
+            complexConv.setUniform1f("s2", params[1]);
             break;
         }
         default: break;
@@ -63,9 +63,9 @@ void PostEffect::end(){
     
     switch (mode) {
         case 0: break;
-        case 1: complexConv.end(); break;
+        case 1: mirrorConv.end(); break;
         case 2: mirrorConv.end(); break;
-        case 3: mirrorConv.end(); break;
+        case 3: complexConv.end(); break;
         default: break;
     }
     composite.end();

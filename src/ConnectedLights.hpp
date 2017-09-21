@@ -26,9 +26,6 @@ public:
         }
     };
     
-    void randomize(){
-        pos.to(ofPoint(ofRandom(-300, 300), ofRandom(-300, 300), ofRandom(-300, 300)));
-    };
     SmoothPoint pos;
     ofVboMesh lines;
     float threshold = 360.;
@@ -95,9 +92,16 @@ public:
     };
     
     void randomize(int i){
-        for (int i = 0; i < num; i++) {
-            ps[i].randomize();
+        if (i == 0) {
+            for (int i = 0; i < num; i++) {
+                ps[i].pos.to(ofPoint(ofRandom(-300, 300), ofRandom(-300, 300), ofRandom(-300, 300)));
+            }
+        } else if (i == 1) {
+            for (int i = 0; i < num; i++) {
+                ps[i].pos.to(ofPoint(ofRandom(-600, 600), ofRandom(-600, 600), ofRandom(-600, 600)));
+            }
         }
+        
     };
 private:
     ofShader lShader;
