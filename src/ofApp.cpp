@@ -2,10 +2,12 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetFrameRate(30);
+    
     pe.setup();
     setupDeferred();
     updateDeferredParam();
-    panel.add(dt.set("dt", 1.0, 0.001, 2.0));
+    panel.add(dt.set("dt", 2.0, 0.001, 4.0));
     receiver.setup(7401);
     camPos.setSpeed(0.01);
     lp1.setSpeed(0.01);
@@ -34,6 +36,22 @@ void ofApp::setup(){
     shared_ptr<ObjBase> o6(new ConnectedLights());
     o6->setup();
     objs.push_back(o6);
+    
+    shared_ptr<ObjBase> o7(new CalatravaStruct());
+    o7->setup();
+    objs.push_back(o7);
+    
+    shared_ptr<ObjBase> o8(new FractInst());
+    o8->setup();
+    objs.push_back(o8);
+    
+    shared_ptr<ObjBase> o9(new RotateArc());
+    o9->setup();
+    objs.push_back(o9);
+    
+    shared_ptr<ObjBase> o10(new TriWall());
+    o10->setup();
+    objs.push_back(o10);
     
     RefObj refObj(o1, 1);
     refObj.isActive = true;
@@ -89,7 +107,6 @@ void ofApp::update(){
                 } else if ((refObjs[0].index == refObjs[2].index) && refObjs[0].isActive && refObjs[2].isActive ) {
                     refObjs[2].isActive = false;
                 }
-                
             }
             
         } else if (dirs[0] == "cam") {
@@ -104,25 +121,38 @@ void ofApp::update(){
                 camPos.to(ofPoint(ofRandom(-800, 800), ofRandom(50, 400), ofRandom(0, 600)));
                 camLook.to(ofPoint(ofRandom(-50, 50), ofRandom(30, 800), ofRandom(-50, 50)));
             }
-            
-        } else if (dirs[0] == "vfx") {
+        } else if (dirs[0] == "lights") {
             lp1.to(ofPoint(ofRandom(0, 600), ofRandom(30, 500), ofRandom(-600, 600)));
             lp2.to(ofPoint(ofRandom(-600, 0), ofRandom(30, 500), ofRandom(-600, 600)));
+        } else if (dirs[0] == "vfx") {
             
-            float coin = ofRandom(1.);
-            if (coin < 0.4) pe.setMode(0);
-            else if (coin < 0.45) pe.setMode(1);
-            else if (coin < 0.5) pe.setMode(2);
-            else if (coin < 0.55) pe.setMode(3);
+            int index = m.getArgAsInt(0);
             
-            coin = ofRandom(1.);
-            if (coin < 0.4) pe.disableGrey();
-            else if (coin < 0.5) pe.enableGrey(false);
-            else if (coin < 0.6) pe.enableGrey(true);
+            if (index == -1) {
+                float coin = ofRandom(1.);
+                if (coin < 0.4) pe.setMode(0);
+                else if (coin < 0.45) pe.setMode(1);
+                else if (coin < 0.5) pe.setMode(2);
+                else if (coin < 0.55) pe.setMode(3);
+                
+                coin = ofRandom(1.);
+                if (coin < 0.4) pe.disableGrey();
+                else if (coin < 0.5) pe.enableGrey(false);
+                else if (coin < 0.6) pe.enableGrey(true);
+
+            } else if (index == 0) {
+                pe.setMode(0);
+                pe.disableGrey();
+            }
+            else if (index == 1) pe.setMode(1);
+            else if (index == 2) pe.setMode(2);
+            else if (index == 3) pe.setMode(3);
+            else if (index == 4) pe.enableGrey(true);
+            else if (index == 5) pe.enableGrey(false);
             
         } else if (dirs[0] == "dt") {
             float to = m.getArgAsFloat(0);
-            dt.set(0.1 + to * 2.);
+            dt.set(0.1 + to * 4.);
         }
         
     }
@@ -206,6 +236,7 @@ void ofApp::setupDeferred(){
     shadow.add(sha_dif.set("Diffuse", 0.25, 0.0, 1.0));
     shadow.add(sha_dark.set("Shadow Darkness", 0.4, 0.0, 1.0));
     shadow.add(sha_blend.set("Lighting Blend", 0.4, 0.0, 1.0));
+    shadow.add(sha_far.set("Far",  5000, 0.0, 6000));
     panel.add(shadow);
     
     dof.setName("Defocus Blur");
@@ -236,6 +267,7 @@ void ofApp::updateDeferredParam(){
     shadowLightPass->setDiffuseColor(ofFloatColor(sha_dif.get()));
     shadowLightPass->setDarkness(sha_dark.get());
     shadowLightPass->setBlend(sha_blend.get());
+    shadowLightPass->setCam(75, 0.1, sha_far.get());
     
     dofPass->setFocus(dof_focal.get());
     dofPass->setMaxBlur(dof_blur.get());
