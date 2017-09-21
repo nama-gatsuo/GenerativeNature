@@ -4,6 +4,7 @@ in float vDepth;
 in vec4 vColor;
 
 uniform int isShadow;
+uniform float time;
 
 layout (location = 0) out vec4 outputColor0;
 layout (location = 1) out vec4 outputColor1;
@@ -24,12 +25,12 @@ void main(){
         outputColor0.r = vDepth;
         outputColor0.a = 1.0;
     } else {
-        outputColor0 = vColor;
+        outputColor0 = mix(vec4(1.2), vec4(0.99), time);
         outputColor1 = vPosition;
         outputColor2 = vec4(calcFlatNormal(vPosition.xyz), vDepth);
 
         vec4 c = vec4(vec3(0.0), 1.0);
-        if (dot(vColor, vColor) > dot(vec4(1.0), vec4(1.0))) c = vColor;
+        if (dot(outputColor0, outputColor0) > dot(vec4(1.0), vec4(1.0))) c = outputColor0;
         outputColor3 = c;
     }
 }

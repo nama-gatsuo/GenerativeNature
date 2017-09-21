@@ -1,12 +1,30 @@
 #pragma once
 
 #include "ofMain.h"
+#include "CommonUtil.hpp"
+#include "ObjBase.hpp"
+#include "NoiseSea.hpp"
+#include "WarpGate.hpp"
+#include "OctaWarms.hpp"
+#include "OctaNest.hpp"
+#include "GenTunnel.hpp"
+#include "ConnectedLights.hpp"
+
+#include "PostEffect.hpp"
 
 #include "ofxOsc.h"
 #include "ofxDeferredShading.h"
 #include "ofxGui.h"
 
 using namespace ofxDeferredShading;
+
+struct RefObj {
+    RefObj(shared_ptr<ObjBase> _ptr, int _index):ref(_ptr), index(_index){};
+    
+    shared_ptr<ObjBase> ref;
+    bool isActive = false;
+    int index;
+};
 
 class ofApp : public ofBaseApp{
 
@@ -20,6 +38,14 @@ public:
 private:
     void setupDeferred();
     void updateDeferredParam();
+    
+    int refNum = 3;
+    vector<RefObj> refObjs;
+    
+    vector<shared_ptr<ObjBase>> objs;
+    ofEasyCam cam;
+    ofxOscReceiver receiver;
+    PostEffect pe;
     
     ofxDeferredProcessing deferred;
     PointLightPass* lightingPass;

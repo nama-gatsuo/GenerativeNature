@@ -1,5 +1,5 @@
 #version 400
-in vec4 vPosition;
+in vec4 vPos;
 in float vDepth;
 in vec4 vColor;
 
@@ -25,11 +25,11 @@ void main(){
         outputColor0.a = 1.0;
     } else {
         outputColor0 = vColor;
-        outputColor1 = vPosition;
-        outputColor2 = vec4(calcFlatNormal(vPosition.xyz), vDepth);
+        outputColor1 = vPos;
+        outputColor2 = vec4(calcFlatNormal(vPos.xyz), vDepth);
 
         vec4 c = vec4(vec3(0.0), 1.0);
-        if (dot(vColor, vColor) > dot(vec4(1.0), vec4(1.0))) c = vColor;
+        if (dot(outputColor0, outputColor0) > dot(vec4(1.0), vec4(1.0))) c = outputColor0;
         outputColor3 = c;
     }
 }
