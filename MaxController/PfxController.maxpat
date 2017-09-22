@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 208.0, 276.0, 29.5, 22.0 ],
 					"style" : "",
-					"text" : "6"
+					"text" : "7"
 				}
 
 			}
@@ -58,7 +58,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 208.0, 247.0, 29.5, 22.0 ],
 					"style" : "",
-					"text" : "5"
+					"text" : "6"
 				}
 
 			}
