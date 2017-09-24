@@ -20,7 +20,7 @@ void PartObj::setup(PartMode mode) {
             float depth = 300;
             float w = 8.;
             
-            ofFloatColor c(1.5);
+            ofFloatColor c(1.2, 1.3, 0.7);
             for (int i = 0; i < num; i++) {
                 ofMatrix4x4 m;
                 m.glRotate(360. / num * i, 0, 0, 1.);
@@ -121,7 +121,6 @@ void PartObj::createSphere(ofMatrix4x4 &m, ofFloatColor &c) {
     }
     
     mesh.append(sphere);
-    
     
 }
 

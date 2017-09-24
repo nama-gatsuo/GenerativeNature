@@ -14,8 +14,8 @@ public:
             
             float coin = ofRandom(1.0);
             ofVec3f col;
-            if (coin < 0.9) col.set(0.3);
-            else col.set(0.9, 2.0, 1.3);
+            if (coin < 0.9) col.set(0.5);
+            else col.set(0.9, 1.4, 1.2);
             
             int n = floor(ofRandom(1.0)*20.) + 20;
             

@@ -136,19 +136,21 @@ void ofApp::update(){
                 else if (coin < 0.55) pe.setMode(3);
                 
                 coin = ofRandom(1.);
-                if (coin < 0.4) pe.disableGrey();
-                else if (coin < 0.5) pe.enableGrey(false);
-                else if (coin < 0.6) pe.enableGrey(true);
+                if (coin < 0.4) pe.disableColor();
+                else if (coin < 0.5) pe.enableColor(ofFloatColor(1.), false);
+                else if (coin < 0.6) pe.enableColor(ofFloatColor(1.), true);
 
             } else if (index == 0) {
                 pe.setMode(0);
-                pe.disableGrey();
+                pe.disableColor();
             }
             else if (index == 1) pe.setMode(1);
             else if (index == 2) pe.setMode(2);
             else if (index == 3) pe.setMode(3);
-            else if (index == 4) pe.enableGrey(true);
-            else if (index == 5) pe.enableGrey(false);
+            else if (index == 4) pe.enableColor(ofFloatColor(1.), true);
+            else if (index == 5) pe.enableColor(ofFloatColor(1.), false);
+            else if (index == 6) pe.enableColor(ofFloatColor(227./225.,84./225., 68./225.) , truer);
+            else if (index == 7) pe.enableColor(ofFloatColor(68./225.,  227/225.,84./225.) , false);
             
         } else if (dirs[0] == "dt") {
             float to = m.getArgAsFloat(0);
@@ -180,7 +182,10 @@ void ofApp::draw(){
     pe.end();
     pe.draw();
     
-    if (isShow) panel.draw();
+    if (isShow) {
+        panel.draw();
+        shadowLightPass->debugDraw();
+    }
 }
 
 //--------------------------------------------------------------
@@ -195,8 +200,8 @@ void ofApp::setupDeferred(){
     
     shadowLightPass = deferred.createPass<ShadowLightPass>().get();
     shadowLightPass->lookAt(ofVec3f(0.0));
-    shadowLightPass->setCam(75, 0.1, 5000);
-    shadowLightPass->setPosition(0, 1500.0, 500);
+    shadowLightPass->setCam(75, 0., 4000.);
+    shadowLightPass->setPosition(200, 1500.0, - 300.);
     shadowLightPass->lookAt(ofVec3f(0.0));
     
     lightingPass = deferred.createPass<PointLightPass>().get();
@@ -235,8 +240,8 @@ void ofApp::setupDeferred(){
     shadow.add(sha_amb.set("Ambient", 0.1, 0.0, 1.0));
     shadow.add(sha_dif.set("Diffuse", 0.25, 0.0, 1.0));
     shadow.add(sha_dark.set("Shadow Darkness", 0.4, 0.0, 1.0));
-    shadow.add(sha_blend.set("Lighting Blend", 0.4, 0.0, 1.0));
-    shadow.add(sha_far.set("Far",  5000, 0.0, 6000));
+    shadow.add(sha_blend.set("Lighting Blend", 0.5, 0.0, 1.0));
+    shadow.add(sha_far.set("Far",  4000., 0.0, 6000));
     panel.add(shadow);
     
     dof.setName("Defocus Blur");

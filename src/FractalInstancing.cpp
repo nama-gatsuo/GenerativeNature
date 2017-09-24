@@ -15,7 +15,7 @@ void FractInst::setup(){
     s.setSpeed(0.005);
     scale.assign(depth, s);
     translate.assign(depth, s);
-    
+    division = 6;
 }
 
 void FractInst::update(float dt){
@@ -55,6 +55,7 @@ void FractInst::draw(ofCamera& cam, bool isShadow){
                 tra.push_back(0.);
             }
         }
+        
         shader.begin();
         shader.setUniform3f("boxSize", boxSize);
         shader.setUniform1i("division", division);
@@ -74,16 +75,16 @@ void FractInst::randomize(int i){
         else if (coin < 0.66) boxSize.to(ofPoint(200., 5.,5.));
         else boxSize.to(ofPoint(5., 200., 5.));
         
-        coin = ofRandom(1.0);
-        if (coin < 0.5) division = 4;
-        else division = 6;
+//        coin = ofRandom(1.0);
+//        if (coin < 0.5) division = 4;
+//        else division = 6;
         
     } else if (i == 1) {
         
         for (int i = 0; i < depth; i++) {
             
             scale[i].to(ofRandom(0.5, 1.0));
-            translate[i].to(ofRandom(0, 150.));
+            translate[i].to(ofRandom(0, 200.));
             
         }
     

@@ -16,7 +16,8 @@ public:
             mesh.clear();
             num = floor(ofRandom(2.0, 8.0));
             
-            c.set(0.5, 0.8, 1.0 + ofRandom(0.8));
+            if (i % 3 == 1) c.set(0.9, 0.92, 1.2);
+            else c.set(0.6, 0.6, 0.7);
             
             randomSeeds.clear();
             createRandomSeed();
@@ -156,8 +157,8 @@ private:
         m.rotateRad(lon, 0, 1, 0);
         
         float d = end.distance(start);
-        float h = 48. / num;
-        float w = 48. / num;
+        float h = 24. / num;
+        float w = 24. / num;
         
         ofMesh box = ofMesh::box(w,h,d, 1,1,1);
         for (int i = 0; i < box.getNumVertices(); i++) {

@@ -21,7 +21,7 @@ void PostEffect::setup(){
     mirrorConv.setUniform2f("res", ofGetWidth(), ofGetHeight());
     mirrorConv.end();
     
-    greyConv.load("shader/passThru.vert", "shader/pfx/GreyConv.frag");
+    colorConv.load("shader/passThru.vert", "shader/pfx/ColorConv.frag");
 }
 
 void PostEffect::begin(){
@@ -76,15 +76,16 @@ void PostEffect::draw(){
     
     ofSetColor(255);
     
-    if (isGrey) {
-        greyConv.begin();
-        greyConv.setUniform1i("isNega", isNega?1:0);
+    if (isColor) {
+        colorConv.begin();
+        colorConv.setUniform1i("isNega", isNega?1:0);
+        colorConv.setUniform4f("theme", theme);
     }
     
     composite.draw(0,0);
     
-    if (isGrey) {
-        greyConv.end();
+    if (isColor) {
+        colorConv.end();
     }
     
 }
@@ -108,12 +109,13 @@ void PostEffect::bang() {
 void PostEffect::setMode(int mode) { this->mode = mode; }
 void PostEffect::setParam(int ch, float val) { params[ch] = val; }
 
-void PostEffect::enableGrey(bool isNega) {
-    isGrey = true;
+void PostEffect::enableColor(ofFloatColor col, bool isNega) {
+    isColor = true;
+    theme = col;
     this->isNega = isNega;
 }
 
-void PostEffect::disableGrey() {
-    isGrey = false;
+void PostEffect::disableColor() {
+    isColor = false;
 }
 

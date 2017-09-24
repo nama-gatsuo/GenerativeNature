@@ -12,8 +12,8 @@ public:
     void setMode(int mode);
     void setParam(int ch, float val);
     
-    void enableGrey(bool isNega);
-    void disableGrey();
+    void enableColor(ofFloatColor col, bool isNega);
+    void disableColor();
     
 private:
     ofFbo base;
@@ -24,8 +24,9 @@ private:
     ofShader complexConv;
     ofShader mirrorConv;
     
-    bool isGrey = false;
+    bool isColor = false;
     bool isNega = false;
-    ofShader greyConv;
+    ofShader colorConv;
+    ofFloatColor theme;
     
 };

@@ -50,7 +50,7 @@ public:
         
         p = ofMesh::sphere(10);
         for (int i = 0; i < p.getNumVertices(); i++) {
-            p.addColor(ofFloatColor(0.1, 0.4, 4.0));
+            p.addColor(ofFloatColor(1.2, 0.9, 1.2));
         }
         
     };
