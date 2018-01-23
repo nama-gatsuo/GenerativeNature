@@ -12,14 +12,59 @@ public:
                     "shader/scene/NoiseSea.frag",
                     "shader/scene/NoiseSea.geom");
         
-        mesh = ofMesh::plane(3000, 3000, 64, 64);
+//        mesh = ofMesh::plane(3000, 3000, 64, 64);
+        mesh.setMode(OF_PRIMITIVE_TRIANGLES);
         ofMatrix4x4 m = ofMatrix4x4();
         m.glRotate(90, 1, 0, 0);
-        for (int i = 0; i < mesh.getNumVertices(); i++) {
-            ofVec3f v = mesh.getVertex(i) * m;
-            mesh.setVertex(i, v);
-            mesh.setNormal(i, ofVec3f(0,1,0));
+        
+        int step = 60;
+        
+        for (int w = -1500; w < 1500; w += step) {
+            for (int h = -1500; h < 1500; h += step) {
+                ofVec3f v, n;
+                n = ofVec3f(0, 1, 0);
+                
+                v = ofVec3f(w, 0, h);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+                v = ofVec3f(w+step, 0, h);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+                v = ofVec3f(w+step, 0, h+step);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+                v = ofVec3f(w+step, 0, h+step);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+                
+                
+                v = ofVec3f(w, 0, h+step);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+                v = ofVec3f(w, 0, h);
+                mesh.addVertex(v);
+                mesh.addNormal(n);
+                mesh.addColor(ofFloatColor(1.));
+                
+            }
         }
+        
+//        for (int i = 0; i < mesh.getNumVertices(); i++) {
+//            ofVec3f v = mesh.getVertex(i) * m;
+//            mesh.setVertex(i, v);
+//            mesh.setNormal(i, ofVec3f(0,1,0));
+//            mesh.addColor(ofFloatColor(1.));
+//        }
         randomize(0);
         randomize(1);
     };
@@ -43,7 +88,7 @@ public:
         shader.setUniform1f("wireWidth", 1.05 - wireWidth.get());
         shader.setUniform1f("time", time);
         
-        mesh.draw();
+        mesh.draw(OF_MESH_FILL);
         shader.end();
     };
     void randomize(int i){

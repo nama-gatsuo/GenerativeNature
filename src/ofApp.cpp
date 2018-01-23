@@ -149,7 +149,7 @@ void ofApp::update(){
             else if (index == 3) pe.setMode(3);
             else if (index == 4) pe.enableColor(ofFloatColor(1.), true);
             else if (index == 5) pe.enableColor(ofFloatColor(1.), false);
-            else if (index == 6) pe.enableColor(ofFloatColor(227./225.,84./225., 68./225.) , truer);
+            else if (index == 6) pe.enableColor(ofFloatColor(227./225.,84./225., 68./225.) , true);
             else if (index == 7) pe.enableColor(ofFloatColor(68./225.,  227/225.,84./225.) , false);
             
         } else if (dirs[0] == "dt") {
@@ -185,6 +185,7 @@ void ofApp::draw(){
     if (isShow) {
         panel.draw();
         shadowLightPass->debugDraw();
+        deferred.debugDraw();
     }
 }
 
@@ -200,8 +201,8 @@ void ofApp::setupDeferred(){
     
     shadowLightPass = deferred.createPass<ShadowLightPass>().get();
     shadowLightPass->lookAt(ofVec3f(0.0));
-    shadowLightPass->setCam(75, 0., 4000.);
-    shadowLightPass->setPosition(200, 1500.0, - 300.);
+    shadowLightPass->setCam(72, 1.0, 4000.);
+    shadowLightPass->setPosition(200., 2500.0, -800.);
     shadowLightPass->lookAt(ofVec3f(0.0));
     
     lightingPass = deferred.createPass<PointLightPass>().get();
@@ -242,14 +243,17 @@ void ofApp::setupDeferred(){
     shadow.add(sha_dark.set("Shadow Darkness", 0.4, 0.0, 1.0));
     shadow.add(sha_blend.set("Lighting Blend", 0.5, 0.0, 1.0));
     shadow.add(sha_far.set("Far",  4000., 0.0, 6000));
+    shadow.add(sha_pos.set("Position", ofVec3f(200., 2500.0, -800.), ofVec3f(0.), ofVec3f(4000)));
     panel.add(shadow);
+    
+    shadowLightPass->setPosition(sha_pos.get());
+    shadowLightPass->lookAt(ofVec3f(0.));
     
     dof.setName("Defocus Blur");
     dof.add(dof_blur.set("Max Blur", 0.5, 0.0, 1.0));
     dof.add(dof_ape.set("Aperture", 0.1, 0.0, 1.0));
     dof.add(dof_focal.set("Focus Distance", 0.1, 0.0, 1.0));
     panel.add(dof);
-    
     
 }
 
@@ -273,6 +277,8 @@ void ofApp::updateDeferredParam(){
     shadowLightPass->setDarkness(sha_dark.get());
     shadowLightPass->setBlend(sha_blend.get());
     shadowLightPass->setCam(75, 0.1, sha_far.get());
+    shadowLightPass->setPosition(sha_pos.get());
+    shadowLightPass->lookAt(ofVec3f(0.));
     
     dofPass->setFocus(dof_focal.get());
     dofPass->setMaxBlur(dof_blur.get());

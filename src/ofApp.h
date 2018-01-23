@@ -86,6 +86,7 @@ private:
     ofParameter<float> sha_dark;
     ofParameter<float> sha_blend;
     ofParameter<float> sha_far;
+    ofParameter<ofVec3f> sha_pos;
     
     ofParameterGroup dof;
     ofParameter<float> dof_blur;

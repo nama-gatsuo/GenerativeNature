@@ -37,7 +37,7 @@ void main(void){
         if(any(lessThan(gBC, vec3(wireWidth)))){
             outputColor0 = vec4(1.);
         } else {
-            if (isDrawFace == 1) outputColor0 = vec4(0., 0.02, 0.1, 1.0);
+            if (isDrawFace == 1) outputColor0 = vec4(1.);
             else discard;
         }
 

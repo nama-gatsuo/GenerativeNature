@@ -43,12 +43,13 @@ void main(void){
             outputColor1 = gPos;
             outputColor2 = vec4(calcFlatNormal(gPos.xyz), gDepth);
 
-            vec4 c = vec4(vec3(0.0), 1.0);
+            vec4 c = vec4(col, 1.);
             if (dot(outputColor0, outputColor0) > dot(vec4(1.0), vec4(1.0))) c = outputColor0;
             outputColor3 = c;
         } else {
-            discard;
+             discard;
         }
+
 
     }
 }

@@ -6,7 +6,7 @@ void FractInst::setup(){
     mesh = ofMesh::box(1.,1.,1., 1,1,1);
     
     ofFloatColor col;
-    col.set(1.0);
+    col.set(0.6);
     
     for (int i = 0; i < mesh.getNumIndices(); i++){
         mesh.addColor(col);
