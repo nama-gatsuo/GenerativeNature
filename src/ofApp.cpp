@@ -9,7 +9,7 @@ void ofApp::setup(){
     updateDeferredParam();
     panel.add(dt.set("dt", 2.0, 0.001, 4.0));
     receiver.setup(7401);
-    camPos.setSpeed(0.01);
+    
     lp1.setSpeed(0.01);
     lp2.setSpeed(0.01);
     
@@ -53,7 +53,24 @@ void ofApp::setup(){
     o10->setup();
     objs.push_back(o10);
     
-    RefObj refObj(o1, 1);
+    shared_ptr<ObjBase> o11(new ParticleDrop());
+    o11->setup();
+    objs.push_back(o11);
+    
+    shared_ptr<ObjBase> o12(new SubdivIcosa());
+    o12->setup();
+    objs.push_back(o12);
+    
+    shared_ptr<ObjBase> o13(new ComplexFlower());
+    o13->setup();
+    objs.push_back(o13);
+    
+    shared_ptr<ObjBase> o14(new ComplexBuilding());
+    o14->setup();
+    objs.push_back(o14);
+    
+//    RefObj refObj(o1, 1);
+    RefObj refObj(o11, 11);
     refObj.isActive = true;
     refObjs.push_back(refObj);
     
@@ -66,9 +83,9 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     if (isShow) updateDeferredParam();
-    camPos.update(dt.get());
-    cam.setPosition(camPos);
-    cam.lookAt(camLook);
+    
+    cam.update(dt.get());
+    
     lp1.update(dt.get());
     lp2.update(dt.get());
     lightingPass->getLightRef(0).position = lp1;
@@ -110,17 +127,9 @@ void ofApp::update(){
             }
             
         } else if (dirs[0] == "cam") {
-            float coin = ofRandom(1.);
-            if (coin < 0.6) {
-                camPos.to(ofPoint(ofRandom(-800, 800), ofRandom(50, 400), ofRandom(600, 1200)));
-                camLook.to(ofPoint(ofRandom(-50, 50), ofRandom(30, 800), ofRandom(-50, 50)));
-            } else if (coin < 0.8) {
-                camPos.to(ofPoint(ofRandom(-200, 200), ofRandom(1000, 1200), ofRandom(-200, 200)));
-                camLook.to(ofPoint(0., 0., 0.));
-            } else {
-                camPos.to(ofPoint(ofRandom(-800, 800), ofRandom(50, 400), ofRandom(0, 600)));
-                camLook.to(ofPoint(ofRandom(-50, 50), ofRandom(30, 800), ofRandom(-50, 50)));
-            }
+            
+            cam.bang();
+            
         } else if (dirs[0] == "lights") {
             lp1.to(ofPoint(ofRandom(0, 600), ofRandom(30, 500), ofRandom(-600, 600)));
             lp2.to(ofPoint(ofRandom(-600, 0), ofRandom(30, 500), ofRandom(-600, 600)));

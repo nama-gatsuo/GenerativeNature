@@ -13,6 +13,10 @@
 #include "FractalInstancing.hpp"
 #include "RotateArc.hpp"
 #include "TriWall.hpp"
+#include "ParticleDrop.hpp"
+#include "SubdivIcosa.hpp"
+#include "ComplexFlower.hpp"
+#include "ComplexBuilding.hpp"
 
 #include "PostEffect.hpp"
 
@@ -47,7 +51,6 @@ private:
     vector<RefObj> refObjs;
     
     vector<shared_ptr<ObjBase>> objs;
-    ofEasyCam cam;
     ofxOscReceiver receiver;
     PostEffect pe;
     
@@ -59,8 +62,8 @@ private:
     DofPass* dofPass;
     
     SmoothPoint lp1, lp2;
-    SmoothPoint camPos;
-    SmoothPoint camLook;
+    MovingCam cam;
+    
     // gui
     bool isShow = false;
     ofxPanel panel;

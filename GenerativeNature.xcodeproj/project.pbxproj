@@ -100,6 +100,10 @@
 		5A438AEC1F7406C200DE063A /* FractalInstancing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FractalInstancing.hpp; sourceTree = "<group>"; };
 		5A438AEF1F74251900DE063A /* RotateArc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RotateArc.hpp; sourceTree = "<group>"; };
 		5A438AF21F7425FE00DE063A /* TriWall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TriWall.hpp; sourceTree = "<group>"; };
+		5A726E97203BE94C000179FE /* ParticleDrop.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ParticleDrop.hpp; sourceTree = "<group>"; };
+		5A726E9B203C038E000179FE /* SubdivIcosa.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SubdivIcosa.hpp; sourceTree = "<group>"; };
+		5A726E9E203C0B28000179FE /* ComplexFlower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComplexFlower.hpp; sourceTree = "<group>"; };
+		5A726EA1203C0B51000179FE /* ComplexBuilding.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComplexBuilding.hpp; sourceTree = "<group>"; };
 		5AABB5C81F72AB2C00DFAB6E /* WarpGate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WarpGate.hpp; sourceTree = "<group>"; };
 		5AABB5CC1F72CB6E00DFAB6E /* OctaWarms.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OctaWarms.hpp; sourceTree = "<group>"; };
 		5AABB5D01F72E53900DFAB6E /* OctaNest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OctaNest.hpp; sourceTree = "<group>"; };
@@ -229,6 +233,10 @@
 				5A438AEC1F7406C200DE063A /* FractalInstancing.hpp */,
 				5A438AEF1F74251900DE063A /* RotateArc.hpp */,
 				5A438AF21F7425FE00DE063A /* TriWall.hpp */,
+				5A726E97203BE94C000179FE /* ParticleDrop.hpp */,
+				5A726E9B203C038E000179FE /* SubdivIcosa.hpp */,
+				5A726E9E203C0B28000179FE /* ComplexFlower.hpp */,
+				5A726EA1203C0B51000179FE /* ComplexBuilding.hpp */,
 			);
 			name = Objs;
 			sourceTree = "<group>";

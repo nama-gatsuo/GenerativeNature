@@ -15,6 +15,11 @@ public:
     void setSpeed(float speed){
         mSpeed = speed;
     };
+    bool isMoving(){
+        float d2 = pow(mTarget.x - this->x, 2.) + pow(mTarget.y - this->y, 2.) + pow(mTarget.z - this->z, 2.);
+        return sqrt(d2) > 100.;
+    };
+    
 private:
     ofPoint mTarget;
     float mSpeed;
@@ -92,3 +97,45 @@ public:
     };
     
 };
+
+class MovingCam : public ofCamera {
+public:
+    MovingCam(){
+        pos.setSpeed(0.02);
+        bang();
+    };
+    void update(float dt){
+        
+        pos.update(dt);
+        look.update(dt);
+        ofCamera::setPosition(pos);
+        ofCamera::lookAt(look);
+    
+    };
+    void bang(){
+        
+        if (!pos.isMoving()) {
+            float coin = ofRandom(1.);
+            if (coin < 0.7) {
+                
+                pos.to(ofPoint(ofRandom(-1000, 1000), ofRandom(50, 400), ofRandom(-1000, 1000)));
+                look.to(ofPoint(ofRandom(-50, 50), ofRandom(10, 10), ofRandom(-50, 50)));
+            } else if (coin < 0.9) {
+                // looking down on
+                pos.to(ofPoint(ofRandom(-200, 200), ofRandom(1000, 1200), ofRandom(-200, 200)));
+                look.to(ofPoint(0., 0., 0.));
+            } else {
+                // look from near center
+                pos.to(ofPoint(ofRandom(-80, 80), ofRandom(10, 80), ofRandom(-80, 80)));
+                look.to(ofPoint(ofRandom(-50, 50), ofRandom(-10, 10), ofRandom(-50, 50)));
+            }
+        }
+    };
+    
+private:
+    SmoothPoint pos;
+    SmoothPoint look;
+    
+};
+
+

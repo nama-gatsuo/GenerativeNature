@@ -28,7 +28,7 @@ public:
     
     SmoothPoint pos;
     ofVboMesh lines;
-    float threshold = 360.;
+    float threshold = 320.;
 };
 
 class ConnectedLights : public ObjBase {
@@ -98,7 +98,7 @@ public:
             }
         } else if (i == 1) {
             for (int i = 0; i < num; i++) {
-                ps[i].pos.to(ofPoint(ofRandom(-600, 600), ofRandom(-600, 600), ofRandom(-600, 600)));
+                ps[i].pos.to(ofPoint(ofRandom(-900, 900), ofRandom(-900, 900), ofRandom(-900, 900)));
             }
         }
         

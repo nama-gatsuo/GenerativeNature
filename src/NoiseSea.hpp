@@ -12,7 +12,6 @@ public:
                     "shader/scene/NoiseSea.frag",
                     "shader/scene/NoiseSea.geom");
         
-//        mesh = ofMesh::plane(3000, 3000, 64, 64);
         mesh.setMode(OF_PRIMITIVE_TRIANGLES);
         ofMatrix4x4 m = ofMatrix4x4();
         m.glRotate(90, 1, 0, 0);
