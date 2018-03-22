@@ -125,13 +125,13 @@ public:
         vector<Arc>::iterator it;
         for (it = arcs.begin(); it < arcs.end(); it++) {
             it->update(dt);
-            if (it->isDead()) arcs.erase(it);
+            if (it->isDead()) it = arcs.erase(it);
         }
         
         vector<Line>::iterator itl;
         for (itl = lines.begin(); itl < lines.end(); itl++) {
             itl->update(dt);
-            if (itl->isDead()) lines.erase(itl);
+            if (itl->isDead()) itl = lines.erase(itl);
         }
     };
     void draw(ofCamera &cam, bool isShadow){

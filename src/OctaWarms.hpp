@@ -114,7 +114,7 @@ public:
         vector<OctaWarm>::iterator it;
         for (it = ows.begin(); it < ows.end(); it++) {
             it->update(dt);
-            if (it->isDead) ows.erase(it);
+            if (it->isDead) it = ows.erase(it);
         }
         wireWidth.update(dt);
     };

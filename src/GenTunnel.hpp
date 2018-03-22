@@ -11,7 +11,7 @@ public:
         for (it = parts.begin(); it < parts.end(); it++) {
             
             if (it->check()) {
-                parts.erase(it);
+                it = parts.erase(it);
             } else {
                 it->update(dt);
             }
