@@ -22,12 +22,14 @@ void PartObj::setup(PartMode mode) {
             
             ofFloatColor c(1.2, 1.3, 0.7);
             for (int i = 0; i < num; i++) {
-                ofMatrix4x4 m;
-                m.glRotate(360. / num * i, 0, 0, 1.);
-                m.glTranslate(0, radius, 0);
+                glm::mat4 m(1.f);
+
+                m = m * glm::rotate(360.f / num * i, glm::vec3(0.f, 0.f, 1.f));
+				m = m * glm::translate(glm::vec3(0.f, radius, 0.f));
+                
                 createBox(m, c, w, w, depth);
             }
-            
+			
             aSpeed = 0.;
             
             break;
@@ -66,9 +68,10 @@ void PartObj::createWalls() {
     ofFloatColor c(.5);
     ofFloatColor c2(1.5);
     for (int i = 0; i < aNum + 1; i++) {
-        ofMatrix4x4 mi;
-        mi.glRotate(totalAngle / aNum * i, 0, 0, 1.);
-        mi.glTranslate(0, radius, 10 * i);
+        glm::mat4 mi(1.f);
+        mi = glm::rotate(mi, totalAngle / aNum * i, glm::vec3(0, 0, 1.));
+		mi = glm::translate(mi, glm::vec3(0, radius, 0));
+
         createBox(mi, c, x, w, totalDepth);
         createBox(mi, c2, x, w*2., w);
         createBox(mi, c, w, w*2., totalDepth);
@@ -89,20 +92,22 @@ void PartObj::createLattice(){
     ofFloatColor c(0.5);
     
     for (int i = 0; i < aNum + 1; i++) {
-        ofMatrix4x4 mi;
-        mi.glRotate(totalAngle / aNum * i, 0, 0, 1.);
-        mi.glTranslate(0, radius, 0);
+		glm::mat4 mi(1.f);
+		mi = glm::rotate(mi, totalAngle / aNum * i, glm::vec3(0, 0, 1.));
+		mi = glm::translate(mi, glm::vec3(0, radius, 0));
         createBox(mi, c, w, w, totalDepth);
         
         if (i != aNum) {
             
             for (int j = 0; j < dNum + 1; j++) {
                 
-                ofMatrix4x4 mj;
-                mj.glRotate(totalAngle / aNum * (i + 0.5), 0, 0, 1.);
-                mj.glTranslate(0, radius, 0);
-                mj.glTranslate(0, 0, totalDepth / dNum * (j - (dNum+1.)*0.5));
-                createBox(mj, c, x, w, w);
+				glm::mat4 mj(1.f);
+				mj = glm::rotate(mj, totalAngle / aNum * (i + 0.5f), glm::vec3(0, 0, 1.));
+				mj = glm::translate(mj, glm::vec3(0, radius, 0));
+				mj = glm::translate(mj, glm::vec3(0, 0, totalDepth / dNum * (j - (dNum + 1.)*0.5)));
+				
+				createBox(mi, c, w, w, totalDepth);
+                
                 
             }
         }
@@ -124,14 +129,15 @@ void PartObj::createSphere(ofMatrix4x4 &m, ofFloatColor &c) {
     
 }
 
-void PartObj::createBox(ofMatrix4x4 &m, ofFloatColor &c, float w, float h, float d){
+void PartObj::createBox(glm::mat4 &m, ofFloatColor &c, float w, float h, float d){
     ofMesh box = ofMesh::box(w, h, d, 1, 1, 1);
     int iNum = mesh.getNumVertices();
     
     for (int i = 0; i < box.getNumVertices(); i++) {
-        ofVec3f v = box.getVertex(i);
-        mesh.addVertex(v * m);
-        mesh.addNormal(((box.getNormal(i) + v) * m - (v * m)).normalize());
+        
+		glm::vec4 v(box.getVertex(i), 1.);
+        mesh.addVertex(m * v);
+        mesh.addNormal(glm::normalize( m * ( glm::vec4(box.getNormal(i), 1.f) + v )) - (m * v) );
         mesh.addColor(c);
     }
     

@@ -172,11 +172,10 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     shadowLightPass->beginShadowMap(true);
-    ofCamera sc = shadowLightPass->getCam();
     for (int i = 0; i < refObjs.size(); i++) {
-        if (refObjs[i].isActive) refObjs[i].ref->draw(sc, true);
+        if (refObjs[i].isActive) refObjs[i].ref->draw(*shadowLightPass, true);
     }
-    lightingPass->drawLights(sc, true);
+    lightingPass->drawLights(*shadowLightPass, true);
     shadowLightPass->endShadowMap();
     
     deferred.begin(cam, true);
@@ -210,7 +209,7 @@ void ofApp::setupDeferred(){
     
     shadowLightPass = deferred.createPass<ShadowLightPass>().get();
     shadowLightPass->lookAt(ofVec3f(0.0));
-    shadowLightPass->setCam(72, 1.0, 4000.);
+    shadowLightPass->setFarClip(4000.f);
     shadowLightPass->setPosition(200., 2500.0, -800.);
     shadowLightPass->lookAt(ofVec3f(0.0));
     
@@ -247,11 +246,6 @@ void ofApp::setupDeferred(){
     panel.add(ao);
     
     shadow.setName("Shadow Light");
-    shadow.add(sha_amb.set("Ambient", 0.1, 0.0, 1.0));
-    shadow.add(sha_dif.set("Diffuse", 0.25, 0.0, 1.0));
-    shadow.add(sha_dark.set("Shadow Darkness", 0.4, 0.0, 1.0));
-    shadow.add(sha_blend.set("Lighting Blend", 0.5, 0.0, 1.0));
-    shadow.add(sha_far.set("Far",  4000., 0.0, 6000));
     shadow.add(sha_pos.set("Position", ofVec3f(200., 2500.0, -800.), ofVec3f(0.), ofVec3f(4000)));
     panel.add(shadow);
     
@@ -280,12 +274,7 @@ void ofApp::updateDeferredParam(){
     
     ssaoPass->setOcculusionRadius(ao_rad.get());
     ssaoPass->setDarkness(ao_dark.get());
-    
-    shadowLightPass->setAmbientColor(ofFloatColor(sha_amb.get()));
-    shadowLightPass->setDiffuseColor(ofFloatColor(sha_dif.get()));
-    shadowLightPass->setDarkness(sha_dark.get());
-    shadowLightPass->setBlend(sha_blend.get());
-    shadowLightPass->setCam(75, 0.1, sha_far.get());
+	
     shadowLightPass->setPosition(sha_pos.get());
     shadowLightPass->lookAt(ofVec3f(0.));
     

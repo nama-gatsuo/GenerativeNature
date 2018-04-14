@@ -112,9 +112,10 @@ public:
     
     void update(float dt){
         vector<OctaWarm>::iterator it;
-        for (it = ows.begin(); it < ows.end(); it++) {
+        for (it = ows.begin(); it < ows.end();) {
             it->update(dt);
             if (it->isDead) it = ows.erase(it);
+			else it++;
         }
         wireWidth.update(dt);
     };

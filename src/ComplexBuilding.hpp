@@ -257,10 +257,12 @@ private:
     void addBox(ofMatrix4x4& _m, ofFloatColor& _c){
         
         ofMesh box = ofMesh::box(2,2,2, 1,1,1);
-        for (int i = 0; i < box.getNumVertices(); i++) {
+		glm::mat4 gm = _m;
+
+		for (int i = 0; i < box.getNumVertices(); i++) {
             
-            ofVec3f v = box.getVertex(i) * _m;
-            ofVec3f n = ((box.getNormal(i) + box.getVertex(i)) * _m - v).normalize();
+            glm::vec4 v = gm * glm::vec4(box.getVertex(i), 1.f);
+			glm::vec4 n = glm::inverse(glm::transpose(gm)) * glm::vec4(box.getNormal(i), 1.f);
             
             box.setVertex(i, v);
             box.setNormal(i, n);

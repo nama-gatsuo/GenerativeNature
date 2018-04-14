@@ -1,9 +1,9 @@
 #include "ofMain.h"
 #include "ObjBase.hpp"
 
-class Arc {
+class ArcObj {
 public:
-    Arc(){
+    ArcObj(){
         startDelay = floor(ofRandom(40));
         startAngle = PI * ofRandom(1.5);
         SA = startAngle;
@@ -111,7 +111,7 @@ public:
         lineShader = ls;
         arcShader = as;
         for (int i = 0; i < 30; i++) {
-            arcs.push_back( Arc() );
+            arcs.push_back( ArcObj() );
         }
         
         for (int i = 0; i < 15; i++) {
@@ -122,16 +122,18 @@ public:
         
     };
     void update(float dt){
-        vector<Arc>::iterator it;
-        for (it = arcs.begin(); it < arcs.end(); it++) {
+        vector<ArcObj>::iterator it;
+        for (it = arcs.begin(); it < arcs.end();) {
             it->update(dt);
             if (it->isDead()) it = arcs.erase(it);
+			else ++it;
         }
         
         vector<Line>::iterator itl;
-        for (itl = lines.begin(); itl < lines.end(); itl++) {
+        for (itl = lines.begin(); itl < lines.end();) {
             itl->update(dt);
             if (itl->isDead()) itl = lines.erase(itl);
+			else  ++itl;
         }
     };
     void draw(ofCamera &cam, bool isShadow){
@@ -179,7 +181,7 @@ public:
 private:
     ofShader lineShader;
     ofShader arcShader;
-    vector<Arc> arcs;
+    std::vector<ArcObj> arcs;
     vector<Line> lines;
     ofVec3f center;
     ofVboMesh mesh;

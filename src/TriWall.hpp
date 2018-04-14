@@ -146,24 +146,27 @@ private:
         }
         
     };
-    void addBox(ofVec3f start, ofVec3f end, float width){
+    void addBox(glm::vec3 start, glm::vec3 end, float width){
         
-        ofVec3f rel = (end - start).normalize();
+		glm::vec3 rel = glm::normalize(end - start);
         float lat = acos(rel.y) - HALF_PI;
         float lon = atan2(rel.x, rel.z);
         
-        ofMatrix4x4 m;
-        m.rotateRad(lat, 1, 0, 0);
-        m.rotateRad(lon, 0, 1, 0);
+        glm::mat4 rot(1.f);
+
+		rot = rot * glm::rotate(lat, glm::vec3(1.f, 0.f, 0.f));
+		rot = rot * glm::rotate(lon, glm::vec3(0.f, 1.f, 0.f));
         
-        float d = end.distance(start);
+        float d = glm::distance(start, end);
         float h = 24. / num;
         float w = 24. / num;
         
         ofMesh box = ofMesh::box(w,h,d, 1,1,1);
         for (int i = 0; i < box.getNumVertices(); i++) {
-            ofVec3f v = (box.getVertex(i) + ofVec3f(0,0,d*0.5)) * m + start;
-            ofVec3f n = ((box.getNormal(i) + v) * m - (v * m)).normalize();
+			glm::mat4 model = glm::translate(start) * rot * glm::translate(glm::vec3(0, 0, d*0.5f));
+
+			glm::vec4 v = model * glm::vec4(box.getVertex(i), 1.f);
+            glm::vec4 n = glm::inverse(glm::transpose(model)) * glm::vec4(box.getNormal(i), 1.f);
             
             box.setVertex(i, v);
             box.setNormal(i, n);

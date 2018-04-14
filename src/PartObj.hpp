@@ -18,7 +18,7 @@ private:
     void createLattice();
     void createWalls();
     void createSphere(ofMatrix4x4 &m, ofFloatColor &c);
-    void createBox(ofMatrix4x4 &m, ofFloatColor &c, float w, float h, float d);
+    void createBox(glm::mat4 &m, ofFloatColor &c, float w, float h, float d);
     
     ofVboMesh mesh;
     ofNode node;

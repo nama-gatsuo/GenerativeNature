@@ -8,12 +8,13 @@ public:
     void update(float dt){
         shader.load("shader/gbuffer.vert", "shader/customShader.frag");
         vector<PartObj>::iterator it;
-        for (it = parts.begin(); it < parts.end(); it++) {
+        for (it = parts.begin(); it < parts.end();) {
             
             if (it->check()) {
                 it = parts.erase(it);
             } else {
                 it->update(dt);
+				it++;
             }
             
         }

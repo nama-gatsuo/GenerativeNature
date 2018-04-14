@@ -20,7 +20,7 @@ private:
     ofFbo composite;
     
     int mode = 0;
-    float params[3] = { 1.0, 0.1, 0.0 };
+    float params[3] = { 1.0f, 0.1f, 0.0f };
     ofShader complexConv;
     ofShader mirrorConv;
     
