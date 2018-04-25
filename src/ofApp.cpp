@@ -171,12 +171,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    shadowLightPass->beginShadowMap(true);
+   /* shadowLightPass->beginShadowMap(true);
     for (int i = 0; i < refObjs.size(); i++) {
         if (refObjs[i].isActive) refObjs[i].ref->draw(*shadowLightPass, true);
     }
     lightingPass->drawLights(*shadowLightPass, true);
-    shadowLightPass->endShadowMap();
+    shadowLightPass->endShadowMap();*/
     
     deferred.begin(cam, true);
     for (int i = 0; i < refObjs.size(); i++) {
@@ -208,10 +208,11 @@ void ofApp::setupDeferred(){
     ssaoPass = deferred.createPass<SsaoPass>().get();
     
     shadowLightPass = deferred.createPass<ShadowLightPass>().get();
-    shadowLightPass->lookAt(ofVec3f(0.0));
+	shadowLightPass->setEnabled(false);
+    /*shadowLightPass->lookAt(ofVec3f(0.0));
     shadowLightPass->setFarClip(4000.f);
     shadowLightPass->setPosition(200., 2500.0, -800.);
-    shadowLightPass->lookAt(ofVec3f(0.0));
+    shadowLightPass->lookAt(ofVec3f(0.0));*/
     
     lightingPass = deferred.createPass<PointLightPass>().get();
     ofxDeferredShading::PointLight dlight;

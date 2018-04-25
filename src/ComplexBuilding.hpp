@@ -262,7 +262,7 @@ private:
 		for (int i = 0; i < box.getNumVertices(); i++) {
             
             glm::vec4 v = gm * glm::vec4(box.getVertex(i), 1.f);
-			glm::vec4 n = glm::inverse(glm::transpose(gm)) * glm::vec4(box.getNormal(i), 1.f);
+			glm::vec4 n = glm::inverse(glm::transpose(gm)) * glm::vec4(box.getNormal(i), 0.f);
             
             box.setVertex(i, v);
             box.setNormal(i, n);
