@@ -1,11 +1,6 @@
 #version 400
-
-uniform float linearDepthScalar;
-
-in vec4 vPosition;
+in float vDepth;
 out vec4 outputColor;
-
 void main(){
-    outputColor.r = - vPosition.z * linearDepthScalar;
-    outputColor.a = 1.0;
+    outputColor = vec4(vec3(vDepth), 1.0);
 }

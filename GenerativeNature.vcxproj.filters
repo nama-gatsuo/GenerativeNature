@@ -1,345 +1,345 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <ClCompile Include="src\ofApp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ofApp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\PostEffect.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\DofPass.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\GBuffer.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\HdrBloomPass.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\PointLightPass.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\Processor.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\ShadowLightPass.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxDeferredShading\src\SsaoPass.cpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxColorPicker.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxInputField.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscBundle.cpp">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscMessage.cpp">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscParameterSync.cpp">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscReceiver.cpp">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscSender.cpp">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\UdpSocket.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\FractalInstancing.cpp">
-      <Filter>src\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CalatravaStruct.cpp">
-      <Filter>src\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="src\PartObj.cpp">
-      <Filter>src\Obj</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons">
-      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxDeferredShading">
-      <UniqueIdentifier>{04797335-B748-CA90-B984-5B22}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxDeferredShading\src">
-      <UniqueIdentifier>{2CCF24B7-A7D0-B339-7BFE-281E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGui">
-      <UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGui\src">
-      <UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc">
-      <UniqueIdentifier>{D91DCA33-6E5D-4481-2AEC-9FBB}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\src">
-      <UniqueIdentifier>{B9DD339A-D93D-92A1-0A2F-4B41}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs">
-      <UniqueIdentifier>{99ECA1D9-873F-4622-8FC0-FC7B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs\oscpack">
-      <UniqueIdentifier>{D3A98534-1602-4FEF-57A6-6593}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs\oscpack\src">
-      <UniqueIdentifier>{BFB5BB47-98C8-BBCB-3066-1046}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs\oscpack\src\ip">
-      <UniqueIdentifier>{5A029128-EB41-95C5-CBC0-CDED}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs\oscpack\src\ip\win32">
-      <UniqueIdentifier>{79DFDFE2-400B-8654-3675-01A3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxOsc\libs\oscpack\src\osc">
-      <UniqueIdentifier>{EDACB89C-9768-9551-4D41-B590}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Obj">
-      <UniqueIdentifier>{121cf813-6488-484f-a9e6-06a3cc1952bf}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\ofApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ofApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PostEffect.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\DofPass.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\GBuffer.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\HdrBloomPass.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\ofxDeferredShading.h">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\PointLightPass.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\Processor.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\ShadowLightPass.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxDeferredShading\src\SsaoPass.hpp">
-      <Filter>addons\ofxDeferredShading\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxColorPicker.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxInputField.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h">
-      <Filter>addons\ofxGui\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOsc.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscArg.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscBundle.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscMessage.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscParameterSync.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscReceiver.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscSender.h">
-      <Filter>addons\ofxOsc\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\NetworkingUtils.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\PacketListener.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\TimerListener.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\UdpSocket.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\MessageMappingOscPacketListener.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscException.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscHostEndianness.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPacketListener.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h">
-      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CommonUtil.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComplexBuilding.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComplexFlower.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ConnectedLights.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\FractalInstancing.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GenTunnel.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CalatravaStruct.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\NoiseSea.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ObjBase.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OctaNest.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OctaWarms.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ParticleDrop.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PartObj.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RotateArc.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SubdivIcosa.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TriWall.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="src\WarpGate.hpp">
-      <Filter>src\Obj</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="icon.rc" />
-  </ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\objs\CalatravaStruct.cpp">
+			<Filter>src\objs</Filter>
+		</ClCompile>
+		<ClCompile Include="src\objs\FractalInstancing.cpp">
+			<Filter>src\objs</Filter>
+		</ClCompile>
+		<ClCompile Include="src\objs\PartObj.cpp">
+			<Filter>src\objs</Filter>
+		</ClCompile>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\PostEffect.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\DofPass.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\GBuffer.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\HdrBloomPass.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\PointLightPass.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\Processor.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\ShadowLightPass.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDeferredShading\src\SsaoPass.cpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxColorPicker.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxInputField.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscBundle.cpp">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscMessage.cpp">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscParameterSync.cpp">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscReceiver.cpp">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\src\ofxOscSender.cpp">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\UdpSocket.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="src\objs">
+			<UniqueIdentifier>{F7DCD91C-843D-B109-8454-7311}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDeferredShading">
+			<UniqueIdentifier>{04797335-B748-CA90-B984-5B22}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDeferredShading\src">
+			<UniqueIdentifier>{2CCF24B7-A7D0-B339-7BFE-281E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui">
+			<UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui\src">
+			<UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc">
+			<UniqueIdentifier>{D91DCA33-6E5D-4481-2AEC-9FBB}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\src">
+			<UniqueIdentifier>{B9DD339A-D93D-92A1-0A2F-4B41}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs">
+			<UniqueIdentifier>{99ECA1D9-873F-4622-8FC0-FC7B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs\oscpack">
+			<UniqueIdentifier>{D3A98534-1602-4FEF-57A6-6593}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs\oscpack\src">
+			<UniqueIdentifier>{BFB5BB47-98C8-BBCB-3066-1046}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs\oscpack\src\ip">
+			<UniqueIdentifier>{5A029128-EB41-95C5-CBC0-CDED}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs\oscpack\src\ip\win32">
+			<UniqueIdentifier>{79DFDFE2-400B-8654-3675-01A3}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxOsc\libs\oscpack\src\osc">
+			<UniqueIdentifier>{EDACB89C-9768-9551-4D41-B590}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\CalatravaStruct.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\CommonUtil.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\ComplexBuilding.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\ComplexFlower.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\ConnectedLights.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\FractalInstancing.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\GenTunnel.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\NoiseSea.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\ObjBase.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\OctaNest.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\OctaWarms.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\ParticleDrop.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\PartObj.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\RotateArc.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\SubdivIcosa.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\TriWall.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\objs\WarpGate.hpp">
+			<Filter>src\objs</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\PostEffect.hpp">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\DofPass.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\GBuffer.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\HdrBloomPass.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\ofxDeferredShading.h">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\PointLightPass.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\Processor.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\ShadowLightPass.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDeferredShading\src\SsaoPass.hpp">
+			<Filter>addons\ofxDeferredShading\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxColorPicker.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxInputField.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOsc.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscArg.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscBundle.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscMessage.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscParameterSync.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscReceiver.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\src\ofxOscSender.h">
+			<Filter>addons\ofxOsc\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\NetworkingUtils.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\PacketListener.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\TimerListener.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\ip\UdpSocket.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\MessageMappingOscPacketListener.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscException.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscHostEndianness.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPacketListener.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h">
+			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
 </Project>

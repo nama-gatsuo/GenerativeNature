@@ -31,6 +31,7 @@ public:
         
         if (isShadow) return;
         
+		ofEnableBlendMode(OF_BLENDMODE_ADD);
         shader.begin();
         shader.setUniform1f("farClip", cam.getFarClip());
         shader.setUniform1f("nearClip", cam.getNearClip());
@@ -40,6 +41,7 @@ public:
         mesh.draw();
         
         shader.end();
+		ofDisableBlendMode();
     };
     void randomize(int i){
         

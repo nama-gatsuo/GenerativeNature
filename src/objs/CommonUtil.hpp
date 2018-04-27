@@ -9,7 +9,7 @@ public:
         this->y += (mTarget.y - this->y) * mSpeed * dt;
         this->z += (mTarget.z - this->z) * mSpeed * dt;
     };
-    void to(ofPoint target){
+    void to(const ofPoint& target){
         mTarget = target;
     };
     void setSpeed(float speed){
@@ -109,8 +109,8 @@ public:
         pos.update(dt);
         look.update(dt);
         ofCamera::setPosition(pos);
-        ofCamera::lookAt(look);
-    
+        //ofCamera::lookAt(look);
+		lookAt(glm::vec3(0.f));
     };
     void bang(){
         

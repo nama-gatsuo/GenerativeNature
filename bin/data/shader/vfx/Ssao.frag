@@ -9,7 +9,7 @@ uniform mat4 projectionMatrix;
 uniform float radius;
 uniform float darkness;
 
-const int LoopNum = 24;
+const int LoopNum = 12;
 
 in vec2 vTexCoord;
 out vec4 outputColor;
@@ -37,10 +37,10 @@ void main() {
 
             float sampleDepth = texture(positionTex, offset.xy).z;
 
-            occlusion += sampleDepth >= s.z ? darkness : 0.0;
-            // float bias = 0.025;
-            // float rangeCheck = smoothstep(0.0, 1.0, radius / abs(position.z - sampleDepth));
-            // occlusion += (sampleDepth >= s.z + bias ? 1.0 : 0.0) * rangeCheck;
+            //occlusion += sampleDepth >= s.z ? darkness : 0.0;
+            float bias = 0.025;
+            float rangeCheck = smoothstep(0.0, 1.0, radius / abs(position.z - sampleDepth));
+            occlusion += (sampleDepth >= s.z + bias ? 1.0 : 0.0) * rangeCheck;
         }
         occlusion = clamp(1.0 - (occlusion / LoopNum), 0.0, 1.0);
     }

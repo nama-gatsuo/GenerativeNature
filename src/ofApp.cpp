@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	ofSetVerticalSync(true);
     ofSetFrameRate(30);
     
     pe.setup();
@@ -171,12 +172,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-   /* shadowLightPass->beginShadowMap(true);
+	shadowLightPass->beginShadowMap(true);
     for (int i = 0; i < refObjs.size(); i++) {
-        if (refObjs[i].isActive) refObjs[i].ref->draw(*shadowLightPass, true);
+        if (refObjs[i].isActive) refObjs[i].ref->draw(shadowLightPass->getCamera(), true);
     }
-    lightingPass->drawLights(*shadowLightPass, true);
-    shadowLightPass->endShadowMap();*/
+    lightingPass->drawLights(shadowLightPass->getCamera(), true);
+    shadowLightPass->endShadowMap();
     
     deferred.begin(cam, true);
     for (int i = 0; i < refObjs.size(); i++) {
@@ -184,7 +185,7 @@ void ofApp::draw(){
     }
     lightingPass->drawLights(cam, false);
     deferred.end(false);
-    
+
     pe.begin();
     deferred.draw();
     pe.end();
@@ -206,23 +207,31 @@ void ofApp::keyPressed(int key){
 void ofApp::setupDeferred(){
     deferred.init(ofGetWidth(), ofGetHeight());
     ssaoPass = deferred.createPass<SsaoPass>().get();
-    
-    shadowLightPass = deferred.createPass<ShadowLightPass>().get();
-	shadowLightPass->setEnabled(false);
-    /*shadowLightPass->lookAt(ofVec3f(0.0));
-    shadowLightPass->setFarClip(4000.f);
-    shadowLightPass->setPosition(200., 2500.0, -800.);
-    shadowLightPass->lookAt(ofVec3f(0.0));*/
+	ssaoPass->setOcculusionRadius(10.f);
+	ssaoPass->setDarkness(1.f);
     
     lightingPass = deferred.createPass<PointLightPass>().get();
     ofxDeferredShading::PointLight dlight;
-    dlight.ambientColor = ofFloatColor(0.005);
+    dlight.ambientColor = ofFloatColor(0.005f);
+	dlight.radius = 500.f;
+	lightingPass->addLight(dlight);
+    
+    dlight.ambientColor = ofFloatColor(0.005f);
     lightingPass->addLight(dlight);
     
-    dlight.ambientColor = ofFloatColor(0.0);
-    lightingPass->addLight(dlight);
-    
+	shadowLightPass = deferred.createPass<ShadowLightPass>().get();
+	shadowLightPass->setEnabled(true);
+	shadowLightPass->setNear(1.f);
+	shadowLightPass->setFar(4000.f);
+	//shadowLightPass->setPosition(200., 2500.0, -800.);
+	shadowLightPass->setDirection(normalize(vec3(-200., -2500.0, 800.)));
+	shadowLightPass->setDarkness(0.9f);
+	shadowLightPass->setAmbientColor(0.2f);
+	shadowLightPass->setDiffuseColor(0.3f);
+
     hdrBloomPass = deferred.createPass<HdrBloomPass>().get();
+	//hdrBloomPass->setEnabled(false);
+
     dofPass = deferred.createPass<DofPass>().get();
     
     // gui
@@ -230,20 +239,18 @@ void ofApp::setupDeferred(){
     pl1.setName("Point light 1");
     pl1.add(pl1_diff.set("Diffuse Color", ofFloatColor(0.65, 0.4, 0.5)));
     pl1.add(pl1_spe.set("Specular Color", ofFloatColor(0.9)));
-    pl1.add(pl1_rad.set("Radius", 400, 100, 2000));
     pl1.add(pl1_int.set("Intensity", 0.44, 0.1, 3.0));
     panel.add(pl1);
     
     pl2.setName("Point light 2");
     pl2.add(pl2_diff.set("Diffuse Color", ofFloatColor(00.3, 0.5, 0.66)));
-    pl2.add(pl2_spe.set("Specular Color", ofFloatColor(0.9)));
     pl2.add(pl2_rad.set("Radius", 400, 100, 2000));
     pl2.add(pl2_int.set("Intensity", 0.44, 0.1, 3.0));
     panel.add(pl2);
     
     ao.setName("Ambient Occlusion");
-    ao.add(ao_rad.set("Occlusion Radius", 5.0, 0.1, 100.0));
-    ao.add(ao_dark.set("Darkness", 0.8, 0.1, 5.0));
+    /*ao.add(ao_rad.set("Occlusion Radius", 8.0, 0.1, 100.0));
+    ao.add(ao_dark.set("Darkness", 0.8, 0.1, 5.0));*/
     panel.add(ao);
     
     shadow.setName("Shadow Light");
@@ -265,19 +272,17 @@ void ofApp::updateDeferredParam(){
     
     lightingPass->getLightRef(0).diffuseColor = pl1_diff.get();
     lightingPass->getLightRef(0).specularColor = pl1_spe.get();
-    lightingPass->getLightRef(0).radius = pl1_rad.get();
     lightingPass->getLightRef(0).intensity = pl1_int.get();
     
     lightingPass->getLightRef(1).diffuseColor = pl2_diff.get();
     lightingPass->getLightRef(1).specularColor = pl2_spe.get();
     lightingPass->getLightRef(1).intensity = pl2_int.get();
-    lightingPass->getLightRef(1).radius = pl2_rad.get();
     
-    ssaoPass->setOcculusionRadius(ao_rad.get());
-    ssaoPass->setDarkness(ao_dark.get());
+    /*ssaoPass->setOcculusionRadius(ao_rad.get());
+    ssaoPass->setDarkness(ao_dark.get());*/
 	
-    shadowLightPass->setPosition(sha_pos.get());
-    shadowLightPass->lookAt(ofVec3f(0.));
+    /*shadowLightPass->setPosition(sha_pos.get());
+    shadowLightPass->lookAt(ofVec3f(0.));*/
     
     dofPass->setFocus(dof_focal.get());
     dofPass->setMaxBlur(dof_blur.get());
