@@ -24,7 +24,7 @@
 #include "ofxDeferredShading.h"
 #include "ofxGui.h"
 
-using namespace ofxDeferredShading;
+using namespace ofxDeferred;
 
 struct RefObj {
     RefObj(shared_ptr<ObjBase> _ptr, int _index):ref(_ptr), index(_index){};

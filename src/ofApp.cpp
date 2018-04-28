@@ -211,7 +211,7 @@ void ofApp::setupDeferred(){
 	ssaoPass->setDarkness(1.f);
     
     lightingPass = deferred.createPass<PointLightPass>().get();
-    ofxDeferredShading::PointLight dlight;
+    PointLight dlight;
     dlight.ambientColor = ofFloatColor(0.005f);
 	dlight.radius = 500.f;
 	lightingPass->addLight(dlight);
